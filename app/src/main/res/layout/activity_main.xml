@@ -1,18 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/background_2">
+
+<GridLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|center_horizontal"
+    android:columnCount="4"
+    android:rowCount="6">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/result"
+        android:text="@string/result_text"
+        android:textSize="@dimen/result_text"
+        android:layout_gravity="right"
+        android:layout_columnSpan="4"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button_del"
+        android:text="@string/key_del"
+        android:textSize="@dimen/button_text" />
+
+    <Button
+        android:id="@+id/button_plus_minus"
+        android:text="@string/key_plus_minus"
+        android:textSize="@dimen/button_text" />
+
+    <Button
+        android:id="@+id/button_mod"
+        android:text="@string/key_mod"
+        android:textSize="@dimen/button_text" />
+
+    <Button
+        android:id="@+id/button_div"
+        android:text="@string/key_div"
+        android:textSize="@dimen/button_text" />
+
+    <Button
+        android:id="@+id/button_7"
+        android:text="@string/key_7"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_8"
+        android:text="@string/key_8"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_9"
+        android:text="@string/key_9"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_mul"
+        android:text="@string/key_mul"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_4"
+        android:text="@string/key_4"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_5"
+        android:text="@string/key_5"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_6"
+        android:text="@string/key_6"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_sub"
+        android:text="@string/key_sub"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_1"
+        android:text="@string/key_1"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_2"
+        android:text="@string/key_2"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_3"
+        android:text="@string/key_3"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_add"
+        android:text="@string/key_add"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_0"
+        android:text="@string/key_0"
+        android:textSize="@dimen/button_text"
+         android:layout_columnSpan="2"
+          android:layout_gravity="fill"/>
+
+
+    <Button
+        android:id="@+id/button_dot"
+        android:text="@string/key_0dot"
+        android:textSize="@dimen/button_text" />
+    <Button
+        android:id="@+id/button_equal"
+        android:text="@string/key_equal"
+        android:textSize="@dimen/button_text" />
+
+
+</GridLayout>
+</FrameLayout>
