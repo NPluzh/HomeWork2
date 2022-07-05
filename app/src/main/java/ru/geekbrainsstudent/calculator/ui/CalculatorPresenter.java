@@ -9,7 +9,7 @@ public class CalculatorPresenter {
     DecimalFormat formater = new DecimalFormat("###,###.##########");
     private CalculatorView view;
     private Calculator calculator;
-    private double argOne;
+    private Double argOne;
     private Double argTwo;
     private Operator selectedOperator;
 
@@ -19,10 +19,13 @@ public class CalculatorPresenter {
     }
 
     public void onDigitPressed(int digit) {
-        if(argTwo == null){
+        if (argTwo == null) {
+            if (argOne == null) {
+                argOne = 0d;
+            }
             argOne = argOne * 10 + digit;
             showFormatted(argOne);
-        }else{
+        } else {
             argTwo = argTwo * 10 + digit;
             showFormatted(argTwo);
         }
@@ -30,8 +33,8 @@ public class CalculatorPresenter {
     }
 
     public void onOperatorPressed(Operator operator) {
-        if(selectedOperator != null){
-            argOne = calculator.perform(argOne,argTwo,selectedOperator);
+        if (selectedOperator != null) {
+            argOne = calculator.perform(argOne, argTwo, selectedOperator);
             showFormatted(argOne);
         }
 
@@ -39,10 +42,10 @@ public class CalculatorPresenter {
         selectedOperator = operator;
     }
 
-    private  void showFormatted(double value){
+
+    private void showFormatted(Double value) {
         view.showResult(formater.format(value));
     }
 
-    public void onDotPressed() {
-    }
+
 }

@@ -86,12 +86,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         findViewById(R.id.button_div).setOnClickListener(operatorClickListener);
         findViewById(R.id.button_sub).setOnClickListener(operatorClickListener);
 
-        findViewById(R.id.button_dot).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                presenter.onDotPressed();
-            }
-        });
+
     };
    @Override
     public void showResult(String result) {
