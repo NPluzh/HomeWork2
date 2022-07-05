@@ -22,8 +22,6 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     private CalculatorPresenter presenter;
 
 
-
-
     View.OnClickListener digitClickListener = new View.OnClickListener(){
         @Override
         public void onClick(View view){

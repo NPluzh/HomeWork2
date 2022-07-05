@@ -6,7 +6,7 @@ import ru.geekbrainsstudent.calculator.model.Calculator;
 import ru.geekbrainsstudent.calculator.model.Operator;
 
 public class CalculatorPresenter {
-    DecimalFormat formater = new DecimalFormat("#.##");
+    DecimalFormat formater = new DecimalFormat("###,###.##########");
     private CalculatorView view;
     private Calculator calculator;
     private double argOne;
@@ -32,7 +32,7 @@ public class CalculatorPresenter {
     public void onOperatorPressed(Operator operator) {
         if(selectedOperator != null){
             argOne = calculator.perform(argOne,argTwo,selectedOperator);
-            view.showResult(String.valueOf(argOne));
+            showFormatted(argOne);
         }
 
         argTwo = 0.0;
