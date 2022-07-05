@@ -33,9 +33,9 @@ public class CalculatorPresenter {
     }
 
     public void onOperatorPressed(Operator operator) {
-        if (selectedOperator != null) {
-            argOne = calculator.perform(argOne, argTwo, selectedOperator);
-            showFormatted(argOne);
+        if(selectedOperator != null){
+            argOne = calculator.perform(argOne,argTwo,selectedOperator);
+            view.showResult(String.valueOf(argOne));
         }
 
         argTwo = 0.0;
