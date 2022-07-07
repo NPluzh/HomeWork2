@@ -12,6 +12,17 @@ public class CalculatorPresenter {
     private Double argOne;
     private Double argTwo;
     private Operator selectedOperator;
+    private boolean lastIsOperator;// отвечает за то, чтобы оператор не был вызван два раза подряд
+    private boolean isEmptyView;// отвечает за то, чтобы оператор не был введен раньше чисел
+    private boolean thereIsArgOne;
+    private boolean thereIsArgTwo;
+    private boolean thereIsOperator;
+    private boolean lastIsEqual;
+
+
+    {
+        isEmptyView = true;
+    }
 
     public CalculatorPresenter(CalculatorView view, Calculator calculator) {
         this.view = view;
@@ -23,28 +34,63 @@ public class CalculatorPresenter {
             if (argOne == null) {
                 argOne = 0d;
             }
+
+            if (lastIsEqual) {
+                argOne = 0.0;
+            }// если было нажато равно, после чего цифра, то число начинает набираться заново
+
+
             argOne = argOne * 10 + digit;
+            thereIsArgOne = true;// есть первый аргумент
             showFormatted(argOne);
         } else {
+            thereIsArgTwo = true;//есть второй аргумент
             argTwo = argTwo * 10 + digit;
             showFormatted(argTwo);
         }
 
+        lastIsOperator = false;// если нажата клавиша цифр, то оператор не будет нажат дважды
+        isEmptyView = false;// окно не пустое
+        lastIsEqual = false;// равно не было последним
     }
 
     public void onOperatorPressed(Operator operator) {
-        if(selectedOperator != null){
-            argOne = calculator.perform(argOne,argTwo,selectedOperator);
-            view.showResult(String.valueOf(argOne));
-        }
+        if (!lastIsOperator && !isEmptyView) {// проверка на то, что клавиша оператора не будет нажата дважды и поле для ввода чисел не пустое
+            if (selectedOperator != null) {
+                argOne = calculator.perform(argOne, argTwo, selectedOperator);
+                showFormatted(argOne);
 
-        argTwo = 0.0;
+                thereIsOperator = false;
+                thereIsArgTwo = false;
+            }
+            argTwo = 0.0;
+        }
         selectedOperator = operator;
+
+        lastIsOperator = true;//последним был нажат оператор
+        thereIsOperator = true;
+        lastIsEqual = false;
+
+
     }
 
 
     private void showFormatted(Double value) {
         view.showResult(formater.format(value));
+    }
+
+    public void onEqualPressed() {
+        if (thereIsArgTwo && thereIsArgOne && thereIsOperator) { // проверка возможности нажатия клавиши равенства
+            argOne = calculator.perform(argOne, argTwo, selectedOperator);
+            showFormatted(argOne);
+
+            selectedOperator = null;
+            argTwo = null;
+
+            lastIsEqual = true;
+            thereIsOperator = false;
+            thereIsArgTwo = false;
+        }
     }
 
 

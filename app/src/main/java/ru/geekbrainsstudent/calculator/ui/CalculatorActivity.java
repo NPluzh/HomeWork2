@@ -87,7 +87,20 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         findViewById(R.id.button_sub).setOnClickListener(operatorClickListener);
 
 
+        View.OnClickListener equalClickListener = new View.OnClickListener() {// слушатель на нажатия кнопки со знаком равенства
+            @Override
+            public void onClick(View view) {
+                presenter.onEqualPressed();
+            };
+        };
+
+        findViewById(R.id.button_equal).setOnClickListener(equalClickListener);//прикрепление слушателя к view
     };
+
+
+
+
+
    @Override
     public void showResult(String result) {
     resultTxt.setText(result);
