@@ -1,12 +1,10 @@
 package ru.geekbrainsstudent.calculator.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -20,23 +18,37 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
     private TextView resultTxt;
     private CalculatorPresenter presenter;
-
-
-    View.OnClickListener digitClickListener = new View.OnClickListener(){
-        @Override
-        public void onClick(View view){
-
-        }
-    };
+    private final static String keyPresenter = "Presenter";
+    private final static String keyTextView = "TextView";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         resultTxt = findViewById(R.id.result);
-        presenter = new CalculatorPresenter(this, new CalculatorImpl());
+        if(savedInstanceState == null){
+            presenter = new CalculatorPresenter(this, new CalculatorImpl());
+        }
+        init();
+    };
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle instanceState){
+        super.onSaveInstanceState(instanceState);
+        instanceState.putSerializable(keyPresenter, presenter);
+        instanceState.putString(keyTextView, resultTxt.getText().toString());
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
+        super.onRestoreInstanceState(instanceState);
+        presenter = (CalculatorPresenter) instanceState.getSerializable(keyPresenter);
+        presenter.setCalculatorView(this);
+        resultTxt.setText(instanceState.getSerializable(keyTextView).toString());
+    }
+
+    private void init(){
         Map<Integer, Integer> digits = new HashMap<>();
         digits.put(R.id.button_0, 0);
         digits.put(R.id.button_1, 1);
@@ -95,14 +107,12 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         };
 
         findViewById(R.id.button_equal).setOnClickListener(equalClickListener);//прикрепление слушателя к view
-    };
-
-
-
+    }
 
 
    @Override
     public void showResult(String result) {
     resultTxt.setText(result);
     }
+
 }

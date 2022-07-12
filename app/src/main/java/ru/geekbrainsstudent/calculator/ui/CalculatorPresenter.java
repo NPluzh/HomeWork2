@@ -1,11 +1,12 @@
 package ru.geekbrainsstudent.calculator.ui;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
 import ru.geekbrainsstudent.calculator.model.Calculator;
 import ru.geekbrainsstudent.calculator.model.Operator;
 
-public class CalculatorPresenter {
+public class CalculatorPresenter implements Serializable {
     DecimalFormat formater = new DecimalFormat("###,###.##########");
     private CalculatorView view;
     private Calculator calculator;
@@ -27,6 +28,10 @@ public class CalculatorPresenter {
     public CalculatorPresenter(CalculatorView view, Calculator calculator) {
         this.view = view;
         this.calculator = calculator;
+    }
+
+    public void setCalculatorView(CalculatorView view){
+        this.view = view;
     }
 
     public void onDigitPressed(int digit) {
