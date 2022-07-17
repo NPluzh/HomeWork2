@@ -15,89 +15,104 @@
             android:id="@+id/result"
             android:layout_columnSpan="4"
             android:layout_gravity="fill"
-            android:background="@color/white"
-            android:text="@string/result_text"
+            android:background="@color/teal_200"
+            android:text="@string/result_text_default"
             android:textDirection="rtl"
             android:textSize="@dimen/result_text" />
 
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_7"
             android:text="@string/key_7"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_8"
             android:text="@string/key_8"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_9"
             android:text="@string/key_9"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+          />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_div"
             android:text="@string/key_div"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_4"
             android:text="@string/key_4"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_5"
             android:text="@string/key_5"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+           />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_6"
             android:text="@string/key_6"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_mul"
             android:text="@string/key_mul"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_1"
             android:text="@string/key_1"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_2"
             android:text="@string/key_2"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_3"
             android:text="@string/key_3"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_sub"
             android:text="@string/key_sub"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+           />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_0"
             android:layout_columnSpan="2"
             android:layout_gravity="fill"
             android:text="@string/key_0"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_equal"
             android:text="@string/key_equal"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+           />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_add"
             android:text="@string/key_add"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text"
+            />
 
 
     </GridLayout>

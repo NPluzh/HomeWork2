@@ -13,4 +13,20 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.Calculator.MyNewTheme" >
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#FFAB00</item>
+        <item name="colorPrimaryVariant">#B30048</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#EF6C00</item>
+        <item name="colorSecondaryVariant">@color/purple_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
 </resources>
