@@ -8,8 +8,8 @@ import ru.geekbrainsstudent.calculator.model.Operator;
 
 public class CalculatorPresenter implements Serializable {
     DecimalFormat formater = new DecimalFormat("###,###.##########");
-    private CalculatorView view;
-    private Calculator calculator;
+    private transient CalculatorView view;
+    private transient Calculator calculator;
     private Double argOne;
     private Double argTwo;
     private Operator selectedOperator;
