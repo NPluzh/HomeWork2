@@ -4,6 +4,15 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_2">
 
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/theme"
+        android:text="@string/key_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/button_text"
+        />
+
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

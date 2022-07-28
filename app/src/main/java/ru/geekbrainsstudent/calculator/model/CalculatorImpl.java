@@ -1,5 +1,7 @@
 package ru.geekbrainsstudent.calculator.model;
 
+import java.io.Serializable;
+
 public class CalculatorImpl implements Calculator{
     @Override
     public double perform(double arg1, double arg2, Operator operator) {

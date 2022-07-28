@@ -3,6 +3,7 @@ package ru.geekbrainsstudent.calculator.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -37,7 +38,6 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         super.onSaveInstanceState(instanceState);
         instanceState.putSerializable(keyPresenter, presenter);
         instanceState.putString(keyTextView, resultTxt.getText().toString());
-
     }
 
     @Override
@@ -105,8 +105,17 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
                 presenter.onEqualPressed();
             };
         };
-
         findViewById(R.id.button_equal).setOnClickListener(equalClickListener);//прикрепление слушателя к view
+
+        findViewById(R.id.theme).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CalculatorActivity.this, SelectThemeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
 

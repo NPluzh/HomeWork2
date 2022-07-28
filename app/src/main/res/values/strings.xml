@@ -20,4 +20,5 @@
     <string name="key_equal">=</string>
     <string name="key_add">+</string>
     <string name="result_text_default">0</string>
+    <string name="key_theme">тема</string>
 </resources>
